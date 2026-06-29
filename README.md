@@ -33,7 +33,7 @@ It is intentionally **beginner friendly** and **well commented**, making it a gr
 
 ## 📸 Screenshots
 
-![KnowledgeBot interface](<img width="1919" height="831" alt="Screenshot 2026-06-29 222148" src="https://github.com/user-attachments/assets/fde5b3dd-e02b-495d-a9f7-82b7a38b09b3" />)
+<img width="1919" height="831" alt="Screenshot 2026-06-29 222148" src="https://github.com/user-attachments/assets/fde5b3dd-e02b-495d-a9f7-82b7a38b09b3" />
 
 > _The dark-themed chat UI with the knowledge stats panel, suggested questions, and typing indicator._
 
