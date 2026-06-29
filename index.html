@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KnowledgeBot - a lightweight knowledge-based chatbot built with vanilla JavaScript that simulates a mini RAG system." />
+  <title>KnowledgeBot 🤖</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Emoji favicon so no external file/download is needed -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+</head>
+<body>
+  <!-- ============================================================= -->
+  <!-- App Shell                                                     -->
+  <!-- ============================================================= -->
+  <div class="app">
+
+    <!-- ===================== Sidebar ========================= -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <span class="logo">🤖</span>
+        <div>
+          <h1 class="sidebar__title">KnowledgeBot</h1>
+          <p class="sidebar__subtitle">Mini RAG Assistant</p>
+        </div>
+      </div>
+
+      <!-- Knowledge statistics panel -->
+      <section class="stats">
+        <h2 class="stats__heading">📊 Knowledge Stats</h2>
+        <div class="stats__grid">
+          <div class="stat-card">
+            <span class="stat-card__value" id="statEntries">0</span>
+            <span class="stat-card__label">Entries</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value" id="statKeywords">0</span>
+            <span class="stat-card__label">Keywords</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value" id="statAsked">0</span>
+            <span class="stat-card__label">Questions Asked</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value" id="statMatched">0</span>
+            <span class="stat-card__label">Answered</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Suggested questions -->
+      <section class="suggestions">
+        <h2 class="suggestions__heading">💡 Try asking</h2>
+        <div class="suggestions__list" id="suggestionList">
+          <!-- Suggested question chips are injected by script.js -->
+        </div>
+      </section>
+
+      <footer class="sidebar__footer">
+        <button class="btn btn--ghost" id="clearChatBtn" type="button">
+          🗑️ Clear Chat
+        </button>
+        <p class="sidebar__note">Runs 100% in your browser.<br />No servers. No APIs.</p>
+      </footer>
+    </aside>
+
+    <!-- ===================== Chat area ======================= -->
+    <main class="chat">
+      <!-- Chat header -->
+      <header class="chat__header">
+        <button class="icon-btn chat__menu" id="menuToggle" type="button" aria-label="Toggle menu">☰</button>
+        <div class="chat__header-info">
+          <span class="avatar avatar--bot">🤖</span>
+          <div>
+            <h2 class="chat__title">KnowledgeBot</h2>
+            <p class="chat__status"><span class="status-dot"></span> Online · Ready to help</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Message list -->
+      <section class="chat__messages" id="messages" aria-live="polite">
+        <!-- Messages are injected by script.js -->
+      </section>
+
+      <!-- Typing indicator -->
+      <div class="typing" id="typingIndicator" hidden>
+        <span class="avatar avatar--bot">🤖</span>
+        <div class="typing__bubble">
+          <span class="typing__dot"></span>
+          <span class="typing__dot"></span>
+          <span class="typing__dot"></span>
+        </div>
+      </div>
+
+      <!-- Input bar -->
+      <footer class="chat__input-bar">
+        <form class="input-form" id="chatForm" autocomplete="off">
+          <input
+            type="text"
+            id="userInput"
+            class="input-form__field"
+            placeholder="Ask me about RAG, LLMs, embeddings…"
+            aria-label="Type your question"
+          />
+          <button type="submit" class="btn btn--send" id="sendBtn" aria-label="Send message">
+            <span class="btn--send__icon">➤</span>
+          </button>
+        </form>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Application logic + knowledge base -->
+  <script src="script.js"></script>
+</body>
+</html>
